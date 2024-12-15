@@ -42,8 +42,7 @@ function draw() {
       bottom: getPoint(31)
     };
     
-    // Double the horizontal distance between eye1 and eye2
-    const eye2OffsetX = 200; // Adjust this value to control the amount of space
+    const eye2OffsetX = 200; 
     eye2.outline = eye2.outline.map(p => createVector(p.x + eye2OffsetX, p.y));
     eye2.center = createVector(eye2.center.x + eye2OffsetX, eye2.center.y);
     eye2.top = createVector(eye2.top.x + eye2OffsetX, eye2.top.y);
@@ -68,11 +67,32 @@ function drawEye(eye, irisColor) {
   // Draw the glowing aura
   noStroke();
   for (let i = 10; i > 0; i--) { // Fewer layers for spaced-out aura
-    const distance = i * 20; // Increased distance for a larger aura radius
-    const alpha = map(i, 10, 1, 8, 1); // Weaker opacity for a subtle effect
-    fill(0, 30, 100, alpha / 200); // aura needs to chsnge based on text
+    const distance = i * 30; // Increased distance for a larger aura radius
+    const alpha = map(i, 50, 1, 3, 1); // Weaker opacity for a subtle effect
+    fill(0, 0, 255, alpha / 200); // aura needs to chsnge based on text
     ellipse(eye.center.x, eye.center.y, irisSize + distance, irisSize + distance);
   }
+
+  // noStroke();
+
+  // // Define base color and set a color range for smoother transitions
+  // let baseColor = color(0, 30, 100); // Starting color of the aura
+  // let targetColor = color(0, 100, 255); // End color of the aura (bluer or lighter)
+
+  // for (let i = 10; i > 0; i--) {
+  //   const distance = i * 20; // Increase distance for larger aura radius
+  //   const alpha = map(i, 10, 1, 30, 5); // Smooth opacity transition, higher initial alpha
+
+  //   // Interpolate between base and target color based on the loop index (i)
+  //   let lerpedColor = lerpColor(baseColor, targetColor, map(i, 10, 1, 0, 1));
+
+  //   // Use the interpolated color with smooth alpha blending
+  //   fill(red(lerpedColor), green(lerpedColor), blue(lerpedColor), alpha); 
+
+  //   // Draw the ellipse to create the aura effect
+  //   ellipse(eye.center.x, eye.center.y, irisSize + distance, irisSize + distance);
+  // }
+
 
   // Draw the iris
   fill(irisColor);
