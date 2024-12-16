@@ -1,6 +1,7 @@
 # cc-final
 
 best played on a flat surface and in good lighting
+Includes audio, requires video
 
 ƸÏƷ
         ƸÏƷ
