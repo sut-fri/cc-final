@@ -1,4 +1,7 @@
 # cc-final
+
+best played on a flat surface and in good lighting
+
 ƸÏƷ
         ƸÏƷ
     ƸÏƷ     0
